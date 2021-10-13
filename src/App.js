@@ -4,7 +4,7 @@ import seedColors from './seedColors.js';
 function App() {
   return (
     <div className="App">
-      <Palette palette={seedColors[4]}/>
+      <Palette {...seedColors[3]}/>
     </div>
   );
 }
