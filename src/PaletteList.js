@@ -19,10 +19,17 @@ const styles = {
     flexWrap: 'wrap',
   },
   nav: {
+    fontSize: "1.5rem",
     color: 'white',
     display: 'flex',
     width: '100%',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    alignItems: 'center', 
+    '& a': {
+      color: "white", 
+      textDecoration: "none",
+      fontSize: "1.25rem"
+    }
   },
   palettes: {
     boxSizing: 'border-box',
@@ -45,6 +52,7 @@ class PaletteList extends Component {
         <div className={classes.container}>
           <nav className={classes.nav}>
             <h1>React Colors</h1>
+            <Link to="/palette/new">Create New Palette</Link>
           </nav>
           <div className={classes.palettes}>
             {palettes.map(palette => {
