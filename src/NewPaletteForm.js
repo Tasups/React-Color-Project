@@ -6,20 +6,22 @@ import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-//import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
-//import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import { ChromePicker } from 'react-color';
+import Divider from '@mui/material/Divider';
+import Button from '@mui/material/Button';
+//import List from '@mui/material/List';
 //import ListItem from '@mui/material/ListItem';
 //import ListItemIcon from '@mui/material/ListItemIcon';
 //import ListItemText from '@mui/material/ListItemText';
 //import InboxIcon from '@material-ui/icons/MoveToInbox';
 //import MailIcon from '@material-ui/icons/Mail';
 
-const drawerWidth = 240;
+const drawerWidth = 400;
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
@@ -115,10 +117,20 @@ function NewPaletteForm() {
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </DrawerHeader>
-
+        <Divider />
+          <Typography variant="h4">Design Your Palette</Typography>
+          <div>
+            <Button variant="contained" color="secondary">Clear Palette</Button>
+            <Button variant="contained" color="primary">Random Color</Button>
+          </div>
+          <ChromePicker 
+            color="orange"
+            onChangeComplete={newColor => console.log(newColor)}
+          />
+          <Button variant="contained" color="primary">ADD COLOR</Button>
       </Drawer>
       <Main open={open}>
-        <DrawerHeader />
+
       </Main>
     </Box>
   );
