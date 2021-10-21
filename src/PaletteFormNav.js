@@ -95,12 +95,3 @@ class PaletteFormNav extends Component {
 
 export default PaletteFormNav;
 
-/* UNUSED IMPORTS
-import { withStyles } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import Divider from '@material-ui/core/Divider';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import { arrayMove } from 'react-sortable-hoc';
-import { ChromePicker } from 'react-color';
-import DraggableColorList from './DraggableColorList.js';
-*/
