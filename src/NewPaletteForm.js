@@ -89,13 +89,21 @@ const styles = theme => ({
 });
 
 class NewPaletteForm extends Component {
+  static defaultProps = {
+    maxColors: 20
+  }
   constructor(props) {
     super(props);
     this.state = {
       open: false,
       currentColor: "orange",
       newColorName: "",
-      colors: [{color: "orange", name: "orange"}, {color: "purple", name: "purple"}],
+      colors: [
+        {color: "red", name: "red"}, {color: "orange", name: "orange"},
+        {color: "yellow", name: "yellow"}, {color: "green", name: "green"}, 
+        {color: "blue", name: "blue"}, {color: "indigo", name: "indigo"},
+        {color: "violet", name: "violet"}, {color: "rgb(1,245,30)", name: "test"}
+        ],
       NewPaletteName: ""
     }
     this.updateCurrentColor = this.updateCurrentColor.bind(this);
@@ -103,6 +111,8 @@ class NewPaletteForm extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.removeColor = this.removeColor.bind(this);
+    this.clearColors = this.clearColors.bind(this);
+    this.addRandomColor = this.addRandomColor.bind(this);
   }
   
   componentDidMount() {
@@ -148,14 +158,6 @@ class NewPaletteForm extends Component {
     })
   }
   
-  addNewColor(){
-    const newColor = {
-      color: this.state.currentColor,
-      name: this.state.newColorName
-    }
-    this.setState({colors: [...this.state.colors, newColor], newColorName: ""});
-  }
-  
   handleSubmit(){
     let newName = this.state.newPaletteName;
     const newPalette = {
@@ -178,15 +180,35 @@ class NewPaletteForm extends Component {
     })
   }
   
+  addNewColor(){
+    const newColor = {
+      color: this.state.currentColor,
+      name: this.state.newColorName
+    }
+    this.setState({colors: [...this.state.colors, newColor], newColorName: ""});
+  }
+  
+  addRandomColor() {
+    const allColors = this.props.palettes.map(p => p.colors).flat();
+    let rand = Math.floor(Math.random() * allColors.length);
+    const randColor = allColors[rand];
+    this.setState({colors: [...this.state.colors, randColor] });
+  }
+
+  clearColors() {
+    this.setState({colors: []})
+  }
+  
   render() {
-    const { classes } = this.props;
-    const { open } = this.state;
+    const { classes, maxColors } = this.props;
+    const { open, colors } = this.state;
+    const paletteIsFull = colors.length >= maxColors;
 
     return (
       <div className={classes.root}>
         <CssBaseline />
         <AppBar
-        color="default"
+          color="default"
           position="fixed"
           className={classNames(classes.appBar, {
             [classes.appBarShift]: open,
@@ -245,8 +267,21 @@ class NewPaletteForm extends Component {
             Design Your Palette
           </Typography>
           <div>
-            <Button variant="contained" color="secondary">Clear Palette</Button>
-            <Button variant="contained" color="primary">Random Color</Button>
+            <Button 
+              variant="contained" 
+              color="secondary" 
+              onClick={this.clearColors}
+            >
+              Clear Palette
+            </Button>
+            <Button 
+              variant="contained" 
+              color="primary"
+              onClick={this.addRandomColor}
+              disabled={paletteIsFull}
+            >
+              {paletteIsFull ? "Palette is full": "RANDOM COLOR"}
+            </Button>
           </div>
           <ChromePicker 
             color={this.state.currentColor} 
@@ -267,9 +302,11 @@ class NewPaletteForm extends Component {
             <Button 
               variant="contained" 
               color="primary" 
-              style={{backgroundColor: this.state.currentColor}}
+              style={{backgroundColor: paletteIsFull ? "lightgrey" : this.state.currentColor}}
               type="submit"
-            >ADD COLOR
+              disabled={paletteIsFull}
+            >
+              {paletteIsFull ? "Palette is full": "ADD COLOR"}
             </Button>
           </ValidatorForm>
            
