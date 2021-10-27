@@ -21,6 +21,7 @@ class PaletteMetaForm extends Component {
     this.handleClickOpen = this.handleClickOpen.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.savePalette = this.savePalette.bind(this);
   }
   
   componentDidMount() {
@@ -29,6 +30,14 @@ class PaletteMetaForm extends Component {
         ({ paletteName }) => paletteName.toLowerCase() !== value.toLowerCase()
       )
     );
+  }
+  
+  savePalette(emoji) {
+    const newPalette ={
+      paletteName: this.state.newPaletteName, 
+      emoji: emoji.native
+    }
+    this.props.handleSubmit(newPalette)
   }
   
   handleChange(evt){
@@ -53,9 +62,6 @@ class PaletteMetaForm extends Component {
       <Button variant="outlined" onClick={this.handleClickOpen}>
         Save
       </Button>
-      <Dialog>
-      
-      </Dialog>
       <Dialog 
         open={this.state.open} 
         onClose={this.handleClose}
@@ -67,7 +73,6 @@ class PaletteMetaForm extends Component {
           <DialogContentText>
             Enter a name for you palette. Make sure it's unique!
           </DialogContentText>
-          <Picker />
             <TextValidator 
               label="Palette Name" 
               name="newPaletteName"
@@ -83,17 +88,21 @@ class PaletteMetaForm extends Component {
               ]}
             />
         </DialogContent>
+        <DialogTitle id='form-dialog-title'>Choose an Emoji</DialogTitle>
+        <Picker title="Pick Your Emoji" onSelect={this.savePalette} />
         <DialogActions>
           <Button onClick={this.handleClose} color='primary'>
             Cancel
           </Button>
-          <Button 
+          {/* DEPRECATED DUE TO EMOJI IMMEDIATE ONSUBMIT FUNCTION
+            <Button 
             variant="contained" 
             color="primary" 
             type="Submit"
           >
             Save Palette
           </Button>
+          */}
         </DialogActions>
         </ValidatorForm>
       </Dialog>
