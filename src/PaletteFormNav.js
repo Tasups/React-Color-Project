@@ -64,4 +64,3 @@ class PaletteFormNav extends Component {
 }
 
 export default PaletteFormNav;
-

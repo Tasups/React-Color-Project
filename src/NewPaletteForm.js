@@ -39,6 +39,9 @@ const styles = theme => ({
     marginLeft: 12,
     marginRight: 20,
   },
+  navBtns: {
+    marginRight: "0px"
+  },
   hide: {
     display: 'none',
   },
