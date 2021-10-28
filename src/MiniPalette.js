@@ -7,7 +7,7 @@ const styles = {
     border: "1px solid black",
     borderRadius: "5px", 
     padding: "0.5rem",
-    paddingBottom: "1.69rem",
+    paddingBottom: "2rem",
     position: "relative",
     overflow: "hidden",
     "&:hover": {
@@ -27,7 +27,7 @@ const styles = {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    margin: "0",
+    margin: "1rem",
     color: "black",
     paddingTop: "0.5rem",
     fontSize: "1rem",
