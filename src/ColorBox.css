@@ -8,10 +8,43 @@
   margin-bottom: -4px;
 }
 
-.SingleColorPalette .ColorBox {
-  height: 50%;
+@media screen and (max-width: 992px) {
+  .ColorBox {
+    width: 25%;
+    height: 20%;
+  }
+  .SingleColorPalette {
+    width: 20%;
+    height: 100%;
+  }
 }
 
+@media screen and (max-width: 768px) {
+  .ColorBox {
+    width: 50%;
+    height: 10%;
+  }
+  .SingleColorPalette {
+    width: 50%;
+    height: 25%;
+  }
+}
+
+@media screen and (max-width: 577px) {
+  .ColorBox {
+    width: 100%;
+    height: 10%;
+  }
+  .SingleColorPalette {
+    width: 100%;
+    height: 10%;
+  }
+}
+
+/*.SingleColorPalette .ColorBox {
+  height: 50%;
+}
+*/
 .ColorBox.go-back {
   background-color: black;
   color: white;
