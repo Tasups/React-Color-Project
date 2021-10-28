@@ -24,7 +24,7 @@
     width: 50%;
     height: 10%;
   }
-  .SingleColorPalette {
+  .ColorBox .SingleColorPalette {
     width: 50%;
     height: 25%;
   }
@@ -34,6 +34,9 @@
   .ColorBox {
     width: 100%;
     height: 10%;
+  }
+  .copy-msg h1 {
+    font-size: 5rem;
   }
   .SingleColorPalette {
     width: 100%;
