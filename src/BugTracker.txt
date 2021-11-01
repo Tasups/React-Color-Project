@@ -4,3 +4,12 @@ Navbar component needs to have a responsive slider at the phone/portrait size. C
 at or around line 19 does not seem to be sufficient.
 
 Title on MiniPalette components are stuffed/stacked on top of each other on the PaletteList component.
+
+Navbar buttons as class navBtns will not move on the right.
+
+Media Query Selectors for JSS
+["@media screen and (max-width: 992px)"]: {
+  container: {
+    width: "90%"
+  }
+},

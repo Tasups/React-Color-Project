@@ -81,8 +81,8 @@ export default [
     ]
   },
   {
-    paletteName: "Flat UI Colors American",
-    id: "flat-ui-colors-american",
+    paletteName: "Flat UI Colors US",
+    id: "flat-ui-colors-us",
     emoji: "🇺🇸",
     colors: [
       { name: "LightGreenishBlue", color: "#55efc4" },

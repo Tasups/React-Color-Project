@@ -13,12 +13,13 @@ const styles = {
     justifyContent: "center"
     },
   container: {
-    width: "50%",
+    width: "90%",
     display: 'flex',
     alignItems: 'flex-start',
     flexDirection: 'column',
     flexWrap: 'wrap',
   },
+  
   nav: {
     fontSize: "1.5rem",
     color: 'white',
@@ -37,8 +38,22 @@ const styles = {
     width: '100%',
     display: 'grid',
     gridTemplateColumns: 'repeat(3, 30%)',
-    gridGap: '5%'
+    gridGap: '5%',
+    paddingBottom: "1rem",
+    marginBottom: "1rem"
+  },
+  ["@media screen and (max-width: 980px)"]: {
+  palettes: {
+    gridTemplateColumns: 'repeat(2, 48%)'
   }
+},
+["@media screen and (max-width: 615px)"]: {
+  palettes: {
+    gridTemplateColumns: 'repeat(1, 80%)',
+    justifyContent: "center",
+    gridGap: "2rem"
+  }
+}
 }
 
 class PaletteList extends Component {
