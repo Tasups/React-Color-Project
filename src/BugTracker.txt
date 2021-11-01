@@ -9,6 +9,8 @@ Navbar buttons as class navBtns will not move on the right.
 
 React Color heading isn't legible when at phone size
 
+Unable to add section 237, transition group class 
+
 Media Query Selectors for JSS
 ["@media screen and (max-width: 992px)"]: {
   container: {
