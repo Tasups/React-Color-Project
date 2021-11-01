@@ -1,0 +1,6 @@
+To track bugs, features, etc. 
+
+Navbar component needs to have a responsive slider at the phone/portrait size. Currently, the .slider rule
+at or around line 19 does not seem to be sufficient.
+
+Title on MiniPalette components are stuffed/stacked on top of each other on the PaletteList component.

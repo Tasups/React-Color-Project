@@ -26,15 +26,7 @@ class App extends Component {
        return palette.id === id;
     })
   }
-  
-  /*
-  removeColor(colorName) {
-    this.setState({
-    colors: this.state.colors.filter(color => color.name !== colorName)
-    })
-  }
-  */
-  
+ 
   deletePalette(id) {
     this.setState(
       {palettes: this.state.palettes.filter(palette => palette.id !== id)}, 

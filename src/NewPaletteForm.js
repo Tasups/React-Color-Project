@@ -40,7 +40,7 @@ const styles = theme => ({
     marginRight: 20,
   },
   navBtns: {
-    marginRight: "0px"
+    marginRight: "1rem"
   },
   hide: {
     display: 'none',
