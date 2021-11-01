@@ -3,9 +3,11 @@ To track bugs, features, etc.
 Navbar component needs to have a responsive slider at the phone/portrait size. Currently, the .slider rule
 at or around line 19 does not seem to be sufficient.
 
-Title on MiniPalette components are stuffed/stacked on top of each other on the PaletteList component.
+FIXED--Title on MiniPalette components are stuffed/stacked on top of each other on the PaletteList component.
 
 Navbar buttons as class navBtns will not move on the right.
+
+React Color heading isn't legible when at phone size
 
 Media Query Selectors for JSS
 ["@media screen and (max-width: 992px)"]: {
