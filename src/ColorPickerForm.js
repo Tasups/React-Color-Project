@@ -13,7 +13,7 @@ const styles ={
   addColor: {
     width: "100%",
     padding: "1rem",
-    marginTop: "1rem",
+    marginTop: "2rem",
     fontSize: "1.5rem"
   },
   colorNameInput: {
@@ -76,7 +76,7 @@ componentDidMount() {
           onChangeComplete={this.updateCurrentColor}
           className={classes.picker}
         />
-         <ValidatorForm onSubmit={this.handleSubmit}>
+         <ValidatorForm onSubmit={this.handleSubmit} instantValidate={false}>
            <TextValidator 
              placeholder="Color Name"
              value={newColorName} 
