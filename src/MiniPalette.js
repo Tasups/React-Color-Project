@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import DeleteSharpIcon from '@material-ui/icons/DeleteSharp';
 import { withStyles } from '@material-ui/styles';
 
@@ -73,7 +73,7 @@ const styles = {
   }
 }
 
-class MiniPalette extends Component {
+class MiniPalette extends PureComponent {
   constructor(props) {
     super(props);
     this.deletePalette = this.deletePalette.bind(this);
@@ -85,7 +85,7 @@ class MiniPalette extends Component {
   }
   
   render() {
-    const { classes, paletteName, emoji, colors, handleClick } = this.props;
+    const { classes, paletteName, emoji, colors, handleClick, id } = this.props;
     const miniColorBoxes = colors.map(color => {
       return <div 
         className={classes.miniColor} 
@@ -95,7 +95,7 @@ class MiniPalette extends Component {
     })
   
   return (
-    <div className={classes.root} onClick={handleClick}> 
+    <div className={classes.root} onClick={() => handleClick(id)}> 
       <DeleteSharpIcon className={classes.deleteIcon} onClick={this.deletePalette}/>
       <div className={classes.colors}>{miniColorBoxes}</div>
       <h5 className={classes.title}>
