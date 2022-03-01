@@ -1,5 +1,7 @@
 To track bugs, features, etc. 
 
+Cleanup still not done
+
 Navbar component needs to have a responsive slider at the phone/portrait size. Currently, the .slider rule
 at or around line 19 does not seem to be sufficient.
 
