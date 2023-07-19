@@ -16,11 +16,6 @@ const styles = {
       opacity: 1
     }
   },
-  ["@media screen and (max-width: 615px)"]: {
-  root: {
-    height: "170px",
-  }
-},
   colors: {
     display: "flex",
     flexWrap: "wrap",
@@ -40,11 +35,6 @@ const styles = {
     fontSize: "1rem",
     position: "relative"
   },
-  ["@media screen and (max-width: 980px)"]: {
-  title: {
-    paddingBottom: "0.8rem",
-  }
-},
   emoji: {
     marginLeft: "0.5rem",
     fontSize: "1.5rem"

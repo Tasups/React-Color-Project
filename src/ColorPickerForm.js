@@ -67,7 +67,7 @@ componentDidMount() {
   }
   
   render() {
-    const { paletteIsFull, styles, classes } = this.props;
+    const { paletteIsFull, classes } = this.props;
     const { currentColor, newColorName } = this.state;
     return(
       <div>

@@ -55,19 +55,7 @@ const styles = {
     gridGap: '5%',
     paddingBottom: "1rem",
     marginBottom: "1rem"
-  },
-  ["@media screen and (max-width: 980px)"]: {
-  palettes: {
-    gridTemplateColumns: 'repeat(2, 48%)'
   }
-},
-["@media screen and (max-width: 615px)"]: {
-  palettes: {
-    gridTemplateColumns: 'repeat(1, 80%)',
-    justifyContent: "center",
-    gridGap: "2rem"
-  }
-}
 }
 
 class PaletteList extends Component {
@@ -101,8 +89,8 @@ class PaletteList extends Component {
   }
   
   render() {
-    const { palettes, classes, deletePalette } = this.props;
-    const { openDeleteDialog, deletingId } = this.state;
+    const { palettes, classes } = this.props;
+    const { openDeleteDialog } = this.state;
     return(
       <div className={classes.root}>
         <div className={classes.container}>

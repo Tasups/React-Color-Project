@@ -1,4 +1,4 @@
-export default [
+const seedColors =  [
   {
     paletteName: "Material UI Colors",
     id: "material-ui-colors",
@@ -243,3 +243,6 @@ export default [
     ]
   }
 ];
+
+
+module.exports = seedColors;
